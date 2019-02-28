@@ -1,0 +1,70 @@
+<view>
+  <view>
+    <view>
+      <view class="user">
+        <view class='user-name'>
+          <open-data class='img_1' type="userAvatarUrl"></open-data>
+          <open-data class='name' type="userNickName"></open-data>
+        </view>
+      </view>
+      <view class='feedback'>我的反馈</view>
+    </view>
+    <!--index.wxml-->
+    <view class='tops'>
+      <view class="swiper-tab">
+        <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav1">受理中 ({{number_1}})</view>
+        <view class="swiper-tab-list1 {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav2">受理成功 ({{number_2}})</view>
+        <view class="swiper-tab-list2 {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav3">受理失败 ({{number_3}})</view>
+      </view>
+
+      <swiper current="{{currentTab}}" wx:key="id" class="swiper-box" duration="300" bindchange="bindChange">
+        <!-- 受理中-->
+        <swiper-item data-id="0" style="" catchtouchmove='catchTouchMove'>
+          <scroll-view scroll-y='true' bindscrolltoupper="refresh" bindscrolltolower="loadMoreData_1">
+            <block wx:for='{{articles}}' wx:key='{{danger_id}}'>
+              <view class='audit-a'>
+                <image src="{{item.feed_back_img}}"></image>
+                <view class='audit-a-cont'>
+                  <view class='con-a'>{{item.message}}</view>
+                  <view class='con-b' bindtap='d3' data-id='{{item.id}}'>查看详情</view>
+                </view>
+              </view>
+            </block>
+          </scroll-view>
+        </swiper-item>
+        <!-- 受理成功 -->
+        <swiper-item data-id="2" catchtouchmove='catchTouchMove'>
+
+          <scroll-view scroll-y='true' bindscrolltoupper="refresh" bindscrolltolower="loadMoreData_2">
+             <block wx:for='{{articles}}' wx:key='{{danger_id}}'>
+              <view class='audit-a'>
+                <image src="{{item.feed_back_img}}"></image>
+                <view class='audit-a-cont'>
+                  <view class='con-a'>{{item.message}}</view>
+                  <view class='con-b' bindtap='d2' data-id='{{item.id}}'>查看详情</view>
+                </view>
+              </view>
+            </block>
+          </scroll-view>
+        </swiper-item>
+        <!-- 受理失败 -->
+        <swiper-item data-id="1" scroll-y="true" catchtouchmove='catchTouchMove'>
+          <scroll-view scroll-y='true' bindscrolltoupper="refresh" bindscrolltolower="loadMoreData_3">
+             <block wx:for='{{articles}}' wx:key='{{danger_id}}'>
+              <view class='audit-a'>
+                <image src="{{item.feed_back_img}}"></image>
+                <view class='audit-a-cont'>
+                  <view class='con-a'>{{item.message}}</view>
+                  <view class='con-b' bindtap='d1' data-id='{{item.id}}'>查看详情</view>
+                </view>
+              </view>
+            </block>
+          </scroll-view>
+        </swiper-item>
+      </swiper>
+
+
+    </view>
+
+  </view>
+</view>

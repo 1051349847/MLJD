@@ -1,0 +1,11 @@
+
+button{
+  display: block;
+  width: 500rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background: #f18d00;
+  color: #fff;
+  margin-top: 250rpx;
+}

@@ -1,0 +1,63 @@
+<view class='swpers'>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" circular="{{circular}}" bindchange='bindchange' duration="{{duration}}">
+    <block wx:for="{{images}}">
+      <swiper-item>
+        <image src="{{item.feed_back_img}}" class="slide-image" width="355" height="150" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='bnner'>
+    <view class='bnner1'>受理成功</view>
+    <view class='bnner2'>{{index}}/{{images.length}}</view>
+  </view>
+</view>
+<view class='det'>
+  <view style='margin-left:20rpx;margin-right:20rpx;'>
+    {{feedBack.message}}
+  </view>
+
+</view>
+<view style='background:#fff;'>
+  <view class='user_info'>
+    <label>姓名</label>
+    <view>{{feedBack.user_name}}</view>
+  </view>
+  <view class='user_info'>
+    <label>联系方式</label>
+    <view>{{feedBack.phone}}</view>
+  </view>
+  <view class='user_info'>
+    <label>公司名称</label>
+    <view>{{feedBack.company_name}}</view>
+  </view>
+  <view class='user_info'>
+    <label>公司地点</label>
+    <view>{{feedBack.address}}</view>
+  </view>
+  <view class='user_info'>
+    <label>设备名称</label>
+    <view>{{feedBack.equipment_name}}</view>
+  </view>
+  <view class='user_info'>
+    <label>设备编码</label>
+    <view>{{feedBack.equipment_code}}</view>
+  </view>
+</view>
+
+<view class='setFeedBack'>
+  <view class='setFeedBack_title'>维修反馈</view>
+  <view class='DataForm'>
+    <view class='DataForm_left'>
+      <view  style='border-top:0rpx;'>维修时间</view>
+      <view>更换配件费用</view>
+      <view>验收人</view>
+      <view>分析处理结果</view>
+    </view>
+    <view class='DataForm_right'>
+      <view style='border-top:0rpx;'>{{feedBack.repair_time}}</view>
+      <view>￥{{feedBack.repair_cost}}</view>
+      <view>{{feedBack.acceptor}}</view>
+      <view class='DataForm_right_cont' style='line-height:40rpx;'>{{feedBack.feedback_message}}</view>
+    </view>
+  </view>
+</view>

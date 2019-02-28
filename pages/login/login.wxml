@@ -1,0 +1,5 @@
+
+<view class='login'>
+  <button hover-class='none' open-type="getUserInfo" bindgetuserinfo="wxLogin">登录</button>
+</view>
+

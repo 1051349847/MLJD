@@ -1,0 +1,73 @@
+<view class='co'>
+  <view class="{{nons==true?'nos':''}}">
+    <view class='upload'>
+      <!-- 选择图片 -->
+      <view class='up-pic'>
+        <view class='flex pic-box'>
+          <block wx:key="imgbox" wx:for="{{images}}">
+            <view class='ap-box'>
+              <view class='add-pic'>
+                <image class='add-pic' src="{{item}}"></image>
+                <view class='img-de' data-deindex='{{index}}'>
+                  <image class='img' src='../../images/delate.png' bindtap='imgDelete1'></image>
+                  <!-- //右上角的删除按钮图片 -->
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view style='padding-top:40rpx;padding-bottom:35rpx;'>
+          <view class='add-pics' bindtap='addPic1' wx:if="{{imgbox.length<9}}">
+            <image class='imgs' src='../../images/tab9.png'></image>
+            <view class='p-v'>点击上传照片{{images.length?images.length:0}}/5</view>
+            <!-- //+号图片 -->
+          </view>
+        </view>
+        <view bindtap='addPic2' class='gallery'>从图库中选择
+          <image src='../../images/more.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='text'>
+      <textarea class="{{nons==true?'ac':''}}" bindinput='content' min-length="30" maxlength='1000' placeholder='描述设备存在的问题...'></textarea>
+      <view></view>
+      <view class='lenteh'>{{length?length:0}}/1000</view>
+    </view>
+    <view class='names'>
+      <label>姓名</label>
+      <input placeholder='请填写您的姓名' bindinput='real_name' value=''></input>
+    </view>
+    <view class='cote'>
+      <label>联系方式</label>
+      <input type='text' placeholder='请填写您的联系方式' maxlength='11' type='number' bindinput='mobile'></input>
+    </view>
+    <view class='cote'>
+      <label>公司名称</label>
+      <input placeholder='请填写您的公司地点' bindinput='getDisplayName' value=''></input>
+    </view>
+    <view class='cote'>
+      <label>公司地点</label>
+      <input placeholder='请填写您的公司地点' bindinput='Company_location' value=''></input>
+    </view>
+    <view class='cote'>
+      <label>设备名称</label>
+      <input placeholder='请填写您的设备名称' bindinput='Device_name' value="{{Device_name?Device_name:''}}"></input>
+    </view>
+    <view class='cote'>
+      <label>设备编号</label>
+      <input placeholder='请填写您的设备编号' maxlength='11' type='number' bindinput='Device_number' value="{{Device_number?Device_number:''}}"></input>
+    </view>
+
+    <view class='buts'>
+      <button bindtap='submit' data-id='addcard'>提交</button>
+    </view>
+  </view>
+
+  <view class="bg" style='display:{{display}}'></view>
+  <view class="show" style='display:{{display}}'>
+    <image class='img1s' bindtap='hideview' src='../../images/delate.png'></image>
+    <image class='img2s' src='../../images/tab5.png'></image>
+    <view class='txt1'>提交成功</view>
+    <view class='txt2'>正在前往系统审核...</view>
+  </view>
+</view>

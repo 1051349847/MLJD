@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/Tools/Tools",
+    "pages/index/index",
+    "pages/heroes/heroes",
+    "pages/user/user",
+    "pages/login/login",
+    "pages/details1/details1",
+    "pages/details2/details2",
+    "pages/details3/details3"
+  ],
+  "window": {
+    "backgroundColor": "#FFFFFF",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "铭雷激光",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#3687ff",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/Tools/Tools",
+        "iconPath": "images/iina.png",
+        "selectedIconPath": "images/shouye.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tab1.png",
+        "selectedIconPath": "images/tab4.png",
+        "text": "报修"
+      },
+    
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "images/tab2.png",
+        "selectedIconPath": "images/tab3.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

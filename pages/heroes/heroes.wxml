@@ -1,0 +1,24 @@
+<view class='header'>
+  <view class='gz'>排行榜规则</view>
+  <view class='gz-cont'>根据用户反馈安全隐患申报成功的次数进行排名 </view>
+</view>
+<view class='content'>
+  <view class='head'>榜单信息</view>
+  <view class='conts'>
+    <view class='tile'>
+      <view class="tile-name">员工信息</view>
+      <view class='tile-cons'>故障申报次数</view>
+      <view class='tile-pm'>排名</view>
+    </view>
+    <block wx:for='{{datas}}' wx:key='{{index}}'>
+    <view class='tile'>
+      <view class='tile-name'>
+        <image src='{{item.head_pic}}'></image>
+        <view class='names'>{{item.nickname}}</view>
+      </view>
+      <view class='tile-cons'>{{item.check_pass}}次</view>
+      <view class='tile-pm' >{{index+1}}</view>
+    </view>
+    </block>
+  </view>
+</view>
